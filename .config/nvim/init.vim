@@ -17,7 +17,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-conflicted'
 Plug 'https://github.com/alok/notational-fzf-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
-Plug 'tpope/vim-eunuch'
 
 call plug#end()
 
