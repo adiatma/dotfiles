@@ -16,5 +16,6 @@ Hello world, welcome to my `.(dotfiles)` setup, to store setup in git repository
 - flipper
 
 ## Theme
-- nord
+- nord (tmux + nvim)
+- afmagic (oh-my-zsh)
 
