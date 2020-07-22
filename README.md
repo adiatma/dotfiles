@@ -12,6 +12,8 @@ Hello world, welcome to my `.(dotfiles)` setup, to store setup in git repository
 - tmux
 - iTerm2
 - oh-my-zsh
+- android-studio
+- flipper
 
 ## Theme
 - nord
