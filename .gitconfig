@@ -1,0 +1,9 @@
+[user]
+	name = adiatma
+	email = adiatma9024@gmail.com
+[rerere]
+	enabled = true
+[alias]
+	conflicted = !nvim +Conflicted
+[mergetool "vim-conflicted"]
+	cmd = nvim +Conflicted
