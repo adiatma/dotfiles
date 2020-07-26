@@ -1,19 +1,19 @@
 [user]
-	name = Adiatma Kamarudin
+  name = Adiatma Kamarudin
   email = adiatma9024@gmail.com
-	signingkey = CFA7226A40B9B289
+  signingkey = CFA7226A40B9B289
 
 [commit]
-	gpgsign = true
+  gpgsign = true
 
 [includeIf "gitdir:~/Work/"]
   path = ~/.config-git/.gitconfig-warpin
 
 [alias]
-	conflicted = !nvim +Conflicted
+  conflicted = !nvim +Conflicted
 
 [mergetool "vim-conflicted"]
-	cmd = nvim +Conflicted
+  cmd = nvim +Conflicted
 
 [gpg]
   program = /usr/local/bin/gpg
