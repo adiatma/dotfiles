@@ -1,9 +1,18 @@
 [user]
 	name = adiatma
-	email = adiatma9024@gmail.com
+  email = adiatma9024@gmail.com
+	signingkey = CFA7226A40B9B289
+[commit]
+	gpgsign = true
+
 [rerere]
 	enabled = true
+
 [alias]
 	conflicted = !nvim +Conflicted
+
 [mergetool "vim-conflicted"]
 	cmd = nvim +Conflicted
+
+[gpg]
+	program = /usr/local/bin/gpg
