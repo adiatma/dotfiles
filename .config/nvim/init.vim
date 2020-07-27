@@ -105,3 +105,5 @@ augroup END
 
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
