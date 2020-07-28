@@ -103,7 +103,9 @@ augroup BWCCreateDir
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
 
+" Mapping COC react-code-refactor
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
+" Golang auto organizeImport
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
