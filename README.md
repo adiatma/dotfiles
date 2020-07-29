@@ -3,8 +3,6 @@
 
 Hello world, welcome to my `.(dotfiles)` setup, to store setup in git repository i'm using [yadm](https://yadm.io/).
 
-![neofetch](./neofetch.png)
-
 ![iTerm2](./iIterm2.png)
 
 ## Tools
