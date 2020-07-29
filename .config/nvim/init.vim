@@ -17,6 +17,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-conflicted'
 Plug 'https://github.com/alok/notational-fzf-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+Plug 'tpope/vim-dispatch'
+Plug 'sheerun/vim-polyglot'
+Plug 'sainnhe/edge'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -44,7 +48,8 @@ set rtp+=/usr/local/opt/fzf
 set mousemodel=extend
 
 " Themes
-colorscheme nord
+colorscheme edge
+set background=dark
 
 " Enable syntax
 syntax enable
@@ -83,7 +88,7 @@ let g:nv_search_paths = ['~/wiki']
 nnoremap <silent> <c-s> :NV<CR>
 
 " Mapping vim conflicted
-noremap <leader>gnc :GitNextConflict<CR>
+nnoremap <leader>gnc :GitNextConflict<CR>
 
 " Use `gl` and `gu` rather than the default conflicted diffget mappings
 let g:diffget_local_map = 'gl'

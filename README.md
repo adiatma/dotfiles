@@ -5,6 +5,8 @@ Hello world, welcome to my `.(dotfiles)` setup, to store setup in git repository
 
 ![neofetch](./neofetch.png)
 
+![iTerm2](./iIterm2.png)
+
 ## Tools
 
 - neovim
@@ -14,8 +16,10 @@ Hello world, welcome to my `.(dotfiles)` setup, to store setup in git repository
 - oh-my-zsh
 - android-studio
 - flipper
+- gpg
 
 ## Theme
-- nord (tmux + nvim)
-- afmagic (oh-my-zsh)
+- tmux-powerline-theme (tmux)
+- spaceship (oh-my-zsh)
+- nvim (edge)
 
