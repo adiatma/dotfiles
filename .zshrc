@@ -24,6 +24,7 @@ alias c='fasd_cd -d'
 alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
+alias vf='v $(fzf)'
 
 # Use ~~ as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER='~~'
