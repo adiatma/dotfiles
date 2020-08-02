@@ -6,7 +6,6 @@ Plug '/usr/local/opt/fzf'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'arcticicestudio/nord-vim'
 Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
@@ -19,8 +18,8 @@ Plug 'https://github.com/alok/notational-fzf-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'tpope/vim-dispatch'
 Plug 'sheerun/vim-polyglot'
-Plug 'sainnhe/edge'
-Plug 'itchyny/lightline.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -41,19 +40,17 @@ if (empty($TMUX))
   endif
 endif
 
+" Themes
+colorscheme gruvbox
+" Enable syntax
+syntax on
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " If FZF installed using Homebrew
 set rtp+=/usr/local/opt/fzf
-
-" Enable mousemodel to using in vim
+" Enable mousemodel to using in nvim
 set mousemodel=extend
-
-" Themes
-colorscheme edge
-set background=dark
-
-" Enable syntax
-syntax enable
-
 " Commons Themes Setup
 set laststatus=0
 set textwidth=100
@@ -69,30 +66,29 @@ set shiftwidth=2
 set expandtab
 set nojoinspaces
 set clipboard=unnamed
+set smarttab
+set relativenumber
 
 " Mapping leader
 let mapleader = ','
+" Setup NV paths
+let g:nv_search_paths = ['~/wiki']
+" Use `gl` and `gu` rather than the default conflicted diffget mappings
+let g:diffget_local_map = 'gl'
+let g:diffget_upstream_map = 'gu'
 
+inoremap jk <ESC>
 " Mapping FZF
 nnoremap <C-f> :Files<CR>
 nnoremap <C-r> :Rg<CR>
 nnoremap <C-a> :Ag<CR>
-
 " Mapping NERDTree
-nnoremap <C-t> :NERDTree<CR>
-
-" Setup NV paths
-let g:nv_search_paths = ['~/wiki']
-
+nnoremap <C-n> :NERDTree<CR>
 " Mapping NV
 nnoremap <silent> <c-s> :NV<CR>
-
-" Mapping vim conflicted
-nnoremap <leader>gnc :GitNextConflict<CR>
-
-" Use `gl` and `gu` rather than the default conflicted diffget mappings
-let g:diffget_local_map = 'gl'
-let g:diffget_upstream_map = 'gu'
+" Mapping COC react-code-refactor
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " New file with directory
 function s:MkNonExDir(file, buf)
@@ -108,9 +104,9 @@ augroup BWCCreateDir
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
 
-" Mapping COC react-code-refactor
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+" Prettier
+let g:prettier#autoformat = 0
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Golang auto organizeImport
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
