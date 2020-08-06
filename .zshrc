@@ -33,7 +33,7 @@ export FZF_COMPLETION_TRIGGER='~~'
 export FZF_COMPLETION_OPTS='+c -x'
 
 # DEFAULT FZF
-export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}"'
+export FZF_DEFAULT_OPTS='--preview "bat --theme="TwoDark" --style=numbers --color=always --line-range :500 {}"'
 
 # NVM (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
