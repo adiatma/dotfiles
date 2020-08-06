@@ -19,7 +19,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'tpope/vim-dispatch'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanoasis/vim-devicons'
-Plug 'morhetz/gruvbox'
+Plug 'sainnhe/edge'
 
 call plug#end()
 
@@ -41,7 +41,9 @@ if (empty($TMUX))
 endif
 
 " Themes
-colorscheme gruvbox
+set background=dark
+colorscheme edge
+
 " Enable syntax
 syntax on
 
@@ -72,7 +74,7 @@ set relativenumber
 " Mapping leader
 let mapleader = ','
 " Setup NV paths
-let g:nv_search_paths = ['~/wiki']
+let g:nv_search_paths = ['~/notes']
 " Use `gl` and `gu` rather than the default conflicted diffget mappings
 let g:diffget_local_map = 'gl'
 let g:diffget_upstream_map = 'gu'
@@ -80,7 +82,6 @@ let g:diffget_upstream_map = 'gu'
 inoremap jk <ESC>
 " Mapping FZF
 nnoremap <C-f> :Files<CR>
-nnoremap <C-r> :Rg<CR>
 nnoremap <C-a> :Ag<CR>
 " Mapping NERDTree
 nnoremap <C-n> :NERDTree<CR>
