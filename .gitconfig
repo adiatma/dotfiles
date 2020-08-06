@@ -18,3 +18,16 @@
 [gpg]
   program = /usr/local/bin/gpg
 
+[core]
+  pager = delta
+
+[delta]
+  plus-color = "#012800"
+  minus-color = "#340001"
+  line-numbers = true
+  side-by-side = true
+  syntax-theme = gruvbox
+
+[interactive]
+  diffFilter = delta --color-only
+
