@@ -20,6 +20,9 @@ Plug 'tpope/vim-dispatch'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/edge'
+Plug 'gyim/vim-boxdraw'
+Plug 'vim-scripts/DrawIt'
+Plug 'itchyny/calendar.vim'
 
 call plug#end()
 
@@ -51,8 +54,6 @@ syntax on
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " If FZF installed using Homebrew
 set rtp+=/usr/local/opt/fzf
-" Enable mousemodel to using in nvim
-set mousemodel=extend
 " Commons Themes Setup
 set laststatus=0
 set textwidth=100
@@ -78,6 +79,10 @@ let g:nv_search_paths = ['~/notes']
 " Use `gl` and `gu` rather than the default conflicted diffget mappings
 let g:diffget_local_map = 'gl'
 let g:diffget_upstream_map = 'gu'
+" Empty value to disable preview window altogether
+let g:fzf_preview_window = ''
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
 inoremap jk <ESC>
 " Mapping FZF
@@ -109,5 +114,9 @@ augroup END
 let g:prettier#autoformat = 0
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+
 " Golang auto organizeImport
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+

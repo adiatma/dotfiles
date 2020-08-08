@@ -8,14 +8,14 @@ export ZSH="/Users/adiatma/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="typewritten"
+ZSH_THEME=""
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx fasd zsh-autosuggestions)
+plugins=(git fzf fasd zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -26,12 +26,10 @@ alias vi='nvim'
 alias v='nvim'
 alias vf='v $(fzf)'
 
-# Use ~~ as the trigger sequence instead of the default **
-export FZF_COMPLETION_TRIGGER='~~'
-
-# Options to fzf command
-export FZF_COMPLETION_OPTS='+c -x'
-
+# Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # DEFAULT FZF
 export FZF_DEFAULT_OPTS='--preview "bat --theme="TwoDark" --style=numbers --color=always --line-range :500 {}"'
 
@@ -63,5 +61,7 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+autoload -U promptinit; promptinit
+prompt pure
