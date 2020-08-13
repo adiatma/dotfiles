@@ -6,7 +6,7 @@
 [commit]
   gpgsign = true
 
-[includeIf "gitdir:~/Work/"]
+[includeIf "gitdir:~/Warpin/"]
   path = ~/.config-git/.gitconfig-warpin
 
 [alias]
