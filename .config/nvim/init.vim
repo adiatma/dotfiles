@@ -6,12 +6,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-conflicted'
 Plug 'https://github.com/alok/notational-fzf-vim'
@@ -20,21 +16,21 @@ Plug 'tpope/vim-dispatch'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/edge'
-Plug 'gyim/vim-boxdraw'
-Plug 'vim-scripts/DrawIt'
+"Plug 'gyim/vim-boxdraw'
+"Plug 'vim-scripts/DrawIt'
 Plug 'itchyny/calendar.vim'
 Plug 'ap/vim-css-color'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 
 call plug#end()
 
-" Themes
+" Enable termguicolors
 set termguicolors
 
+" Themes
 let g:edge_style = 'neon'
 let g:edge_disable_italic_comment = 1
-
 set background=dark
-
 colorscheme edge
 
 " Enable syntax
@@ -74,12 +70,16 @@ let g:fzf_preview_window = ''
 " [[B]Commits] Customize the options used by 'git log':
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
+" CHADTree shortcat command to open with :CHADopen
+" https://github.com/ms-jpq/chadtree
+nnoremap <leader>v <cmd>CHADopen<cr>
+
 inoremap jk <ESC>
 " Mapping FZF
 nnoremap <C-f> :Files<CR>
 nnoremap <C-a> :Ag<CR>
 " Mapping NERDTree
-nnoremap <C-n> :NERDTree<CR>
+" nnoremap <C-n> :NERDTree<CR>
 " Mapping NV
 nnoremap <silent> <c-s> :NV<CR>
 " Mapping COC react-code-refactor
