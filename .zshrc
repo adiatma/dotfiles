@@ -21,10 +21,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias c='fasd_cd -d'
+
 alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
-alias vf='v $(fzf)'
+alias vf='nvim $(fzf)'
+
+alias cat='bat' 
 
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
