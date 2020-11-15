@@ -18,9 +18,10 @@ Plug 'sainnhe/edge'
 Plug 'itchyny/calendar.vim'
 Plug 'ap/vim-css-color'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
-Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}
 Plug 'kablamo/vim-git-log'
 Plug 'gregsexton/gitv'
+Plug 'mattn/emmet-vim'
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
@@ -36,6 +37,16 @@ syntax on
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Enable foldable
+" zo opens a fold at the cursor.
+" zO opens all folds at the cursor.
+" zc closes a fold at the cursor.
+" zm increases the foldlevel by one.
+" zM closes all open folds.
+" zr decreases the foldlevel by one.
+" zR decreases the foldlevel to zero -- all folds will be open.
+set foldmethod=syntax
 
 " Commons Themes Setup
 set laststatus=0
