@@ -68,6 +68,4 @@ fi
 autoload -U promptinit; promptinit
 prompt pure
 
-# begin appcenter completion
-. <(appcenter --completion)
-# end appcenter completion
+
