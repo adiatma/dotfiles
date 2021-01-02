@@ -46,7 +46,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " zM closes all open folds.
 " zr decreases the foldlevel by one.
 " zR decreases the foldlevel to zero -- all folds will be open.
-set foldmethod=syntax
+" set foldmethod=syntax
 
 " Commons Themes Setup
 set laststatus=0
