@@ -1,7 +1,7 @@
 {
-  "androidHome": "/opt/android_sdk",
+  "androidHome": "",
   "enableAndroid": true,
-  "enableIOS": true,
+  "enableIOS": false,
   "enablePhysicalIOS": true,
   "enablePrefetching": 2,
   "idbPath": "/usr/local/bin/idb",
