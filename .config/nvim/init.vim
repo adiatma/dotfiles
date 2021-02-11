@@ -14,7 +14,6 @@ Plug 'https://github.com/alok/notational-fzf-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanoasis/vim-devicons'
-Plug 'sainnhe/edge'
 Plug 'itchyny/calendar.vim'
 Plug 'ap/vim-css-color'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
@@ -22,15 +21,26 @@ Plug 'kablamo/vim-git-log'
 Plug 'gregsexton/gitv'
 Plug 'mattn/emmet-vim'
 Plug 'jparise/vim-graphql'
+Plug 'rescript-lang/vim-rescript'
+Plug 'sainnhe/sonokai'
+"Plug 'morhetz/gruvbox'
+"Plug 'sainnhe/edge'
 
 call plug#end()
 
 " Enable termguicolors
-set termguicolors
+if has('termguicolors')
+    set termguicolors
+endif
 
 " Themes
-set background=dark
-colorscheme edge
+let g:sonokai_better_perormance = 1
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+colorscheme sonokai
+
+" Themes Airline
+" let g:airline_theme = 'edge'
 
 " Enable syntax
 syntax on
@@ -48,7 +58,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " zR decreases the foldlevel to zero -- all folds will be open.
 " set foldmethod=syntax
 
-" Commons Themes Setup
+" Commons Setup
 set laststatus=0
 set textwidth=100
 set noruler
@@ -64,12 +74,11 @@ set expandtab
 set nojoinspaces
 set clipboard=unnamed
 set smarttab
-set relativenumber
 
 " Mapping leader
 let mapleader = ','
 " Setup NV paths
-let g:nv_search_paths = ['~/notes']
+let g:nv_search_paths = ['~/Personal/notes', '~/Warpin/notes']
 " Use `gl` and `gu` rather than the default conflicted diffget mappings
 let g:diffget_local_map = 'gl'
 let g:diffget_upstream_map = 'gu'
@@ -88,10 +97,6 @@ nnoremap <C-f> :Files<CR>
 nnoremap <C-a> :Ag<CR>
 
 nnoremap <silent> <c-s> :NV<CR>
-
-" Mapping COC react-code-refactor
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " New file with directory
 function s:MkNonExDir(file, buf)
