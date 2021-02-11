@@ -21,12 +21,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias c='fasd_cd -d'
-
 alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
-alias vf='nvim $(fzf)'
-
 alias cat='bat' 
 
 # Setting fd as the default source for fzf
@@ -67,5 +64,4 @@ fi
 # Enable autoload theme pure
 autoload -U promptinit; promptinit
 prompt pure
-
 
